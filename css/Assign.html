@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment</title>
+  <style>
+      /* CSS styles */
+    p{ text-align: left;
+    color: rgb(30, 255, 0);
+
+    }
+    h1{
+    text-align: center;
+    background-color: #270076;
+    color: rgb(255, 238, 0);
+    }
+    
+    body {
+  background-image: url("back.jpg");
+    .container {
+        text-align:center;
+    background-color: #ff9696;
+    border: 3px solid;
+    border-color: #4400ff;
+    border-width: medium;
+      width: 210px;
+      height: 150px;
+      overflow: hidden;
+      float: left;
+      margin: 10px;
+    }
+  
+    
+    .thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .container{
+  width: 150px;
+  height: 100px;
+  margin: 100px auto; 
+
+
+}
+    .enlarged-container {
+    position:inherit;
+      width: 450px;
+      height: 300px;
+      overflow: hidden;
+      display: none;
+      background-color: #ff9696;
+    border: 6px solid;
+    border-color: #ff0000;
+    border-width: medium;
+    }
+    
+    .enlarged-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    <h1>Car Shop</h1>
+    <p>Select your Car</p>
+  <div class="container">
+    <img src="a.jpg" class="thumbnail" alt="Image 1">
+  </div>
+  <div class="container">
+    <img src="b.jpg" class="thumbnail" alt="Image 2">
+  </div>
+  <div class="container">
+    <img src="c.jpg" class="thumbnail" alt="Image 3">
+    </div>
+     <div class="container">
+    <img src="d.jpg" class="thumbnail" alt="Image 4">
+  </div>
+  <div class="container">
+    <img src="e.jpg" class="thumbnail" alt="Image 5">
+  </div>
+  
+  <div class="enlarged-container">
+    <img src="" class="enlarged-thumbnail" alt="Enlarged Image">
+  </div>
+  
+  <script>
+    // JavaScript code for image selection and enlargement
+
+    // Get all thumbnail elements
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    // Get the enlarged container element and the enlarged thumbnail element
+    const enlargedContainer = document.querySelector('.enlarged-container');
+    const enlargedThumbnail = document.querySelector('.enlarged-thumbnail');
+
+     // Add click event listener to each thumbnail
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+         // Display the enlarged container
+        enlargedContainer.style.display = 'block';
+          // Set the source of the enlarged thumbnail to the clicked thumbnail's source
+        enlargedThumbnail.src = thumbnail.src;
+      });
+    });
+     // Add click event listener to the enlarged container
+    enlargedContainer.addEventListener('click', () => {
+      // Hide the enlarged container when clicked
+      enlargedContainer.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

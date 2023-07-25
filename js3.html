@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+<style>
+#entry{
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#over{
+    width: 300px
+
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+<script>
+function displayFullName() {
+    var fullName = document.getElementById("fname").value;
+    alert("Your fullname is: " + fullName);
+}
+</script>
+<script>
+    // Function to display the selected Gender in an alert
+    function displaySex() {
+        var selectedSex = document.querySelector('input[name="Gender"]:checked');
+        if (selectedSex) {
+            alert("Your selected Gender is: " + selectedSex.value);
+        } else {
+            alert("Please select a Gender.");
+        }
+    }
+</script>
+<script>
+   function change(newImageSrc) {
+            var imageElement = document.getElementById("mainImage");
+            imageElement.src = newImageSrc;
+        }
+</script>
+<script>
+    function changeImage(newImage) {
+        var imageElement = document.getElementsByTagName("img")[0];
+        imageElement.src = newImage;
+    }
+</script>
+
+</head>
+
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Animation</b></a></div>
+    </div>
+    
+	</header>
+
+	<div class="container" style="height: 1000px;">
+<body style="background-color:rgb(109, 161, 106);">
+<h1>Welcome to the Java Script World</h1><br/>
+<div id="entry">
+    <form action="/action_page.php" onsubmit="return false;">
+        <label for="fname">1. Please input your fullname:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <input type="submit" value="Submit" onclick="displayFullName()">
+        </form><br>
+       <br/> <form id="GenderForm">
+        <label for="fname">2. Please input your gender:</label><br>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="Gender" value="Male">
+            <br>
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="Gender" value="Female">
+            <br>
+            <input type="button" value="Submit" onclick="displaySex()">
+        </form>
+        <p><center>3. Mouseover effect</center></p>
+        <img src ="img/m.jpg" name="m" width="400px"
+	onmouseover="this.src='img/n.jpg'"
+	onmouseout="this.src='img/m.jpg'">
+    <div>
+        <button onclick="change('img/x.jpg')">Mt. Everest</button>
+        <button onclick="change('img/y.jpg')">Pashupatinath</button>
+        <button onclick="change('img/z.jpg')">Lumbini</button>
+    </div>
+
+    <div>
+        <img src="img/x.jpg" id="mainImage" alt="Main Image" width="500px">
+    </div>
+
+</div>
+	
+<footer>Copyright © 2023 kcg.edu All Rights Reserved.</footer>
+</div>
+</body>
+</html>

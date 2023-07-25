@@ -1,0 +1,167 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+  <style>
+      /* CSS styles */
+    p{ text-align: left;
+    color: rgb(15, 16, 15);
+
+    }
+    h1{
+    text-align: center;
+    background-color: #3e0bbe;
+    color: rgb(255, 238, 0);
+    }
+    
+    body {
+  background-image: url("back.jpg");
+    }
+    .container {
+        text-align:center;
+    background-color: #ff9696;
+    border: 3px solid;
+    border-color: #4400ff;
+    border-width: medium;
+      width: 210px;
+      height: 150px;
+      overflow: hidden;
+      float: left;
+      margin: 10px;
+    }
+  
+    
+    .thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .container{
+  width: 150px;
+  height: 100px;
+  margin: 100px auto; 
+
+
+}
+    .enlarged-container {
+    position:inherit;
+      width: 450px;
+      height: 300px;
+      overflow: hidden;
+      display: none;
+      background-color: #ff9696;
+    border: 6px solid;
+    border-color: #ff0000;
+    border-width: medium;
+    }
+    
+    .enlarged-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #jersey{
+      font-size: 24px;
+      color: #1E28CD;
+    }
+  </style>
+</head>
+
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:rgb(6, 19, 6);;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Animation</b></a></div>
+    </div>
+    
+	</header>
+
+  <body>
+    <h1>My Shop</h1>
+    <p id="Jersey">Select Your Jersey</p>
+<div>
+  <div class="container">
+    <img src="img/a.jpg" class="thumbnail" alt="Image 1">
+  </div>
+  <div class="container">
+    <img src="img/b.jpg" class="thumbnail" alt="Image 2">
+  </div>
+  <div class="container">
+    <img src="img/c.jpg" class="thumbnail" alt="Image 3">
+    </div>
+     <div class="container">
+    <img src="img/d.jpg" class="thumbnail" alt="Image 4">
+  </div>
+  <div class="container">
+    <img src="img/e.jpg" class="thumbnail" alt="Image 5">
+  </div>
+  
+  <div class="enlarged-container">
+    <img src="" class="enlarged-thumbnail" alt="Enlarged Image">
+  </div>
+</div>
+</body>
+  <script>
+    // JavaScript code for image selection and enlargement
+
+    // Get all thumbnail elements
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    // Get the enlarged container element and the enlarged thumbnail element
+    const enlargedContainer = document.querySelector('.enlarged-container');
+    const enlargedThumbnail = document.querySelector('.enlarged-thumbnail');
+
+     // Add click event listener to each thumbnail
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+         // Display the enlarged container
+        enlargedContainer.style.display = 'block';
+          // Set the source of the enlarged thumbnail to the clicked thumbnail's source
+        enlargedThumbnail.src = thumbnail.src;
+      });
+    });
+     // Add click event listener to the enlarged container
+    enlargedContainer.addEventListener('click', () => {
+      // Hide the enlarged container when clicked
+      enlargedContainer.style.display = 'none';
+    });
+  </script>
+  
+ 
+<footer>Copyright © 2023 kcg.edu All Rights Reserved.</footer>
+</div>
+
+</body>
+</html>

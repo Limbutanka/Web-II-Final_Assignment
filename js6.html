@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  function changeImage(imageId, newImageSrc) {
+      const imageElement = document.getElementById(imageId);
+      imageElement.src = newImageSrc;
+  }
+</script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+</head>
+
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Animation</b></a></div>
+    </div>
+    
+	</header>
+  <div class="container">
+<body onLoad="moveImgX()">
+
+<h1 style ="text-align:center;">Moving Object</h1>
+<img src="img/animation.png" width="200" height="100" id="img1" style="position:relative;">
+</div>
+<script>
+imgLeftStart=0;
+imgLeftEnd=2000;
+imgLeft=imgLeftStart;
+imgTop=100;
+moveStep=10;
+moveSpeed=50;
+function moveImgX(){
+document.getElementById("img1").style.top=imgTop;
+document.getElementById("img1").style.left=imgLeft;
+if(imgLeftEnd-imgLeftStart>0){
+imgLeft+=moveStep;
+if(imgLeft.imgLeftEnd){
+imgLeft=imgLeftEnd;
+}
+}
+else{
+imgLeft-=moveStep;
+if(imgLeft<imgLeftEnd){
+imgLeft=imgLeftEnd;
+}
+}
+setTimeout("moveImgX()",moveSpeed);
+}
+</script>
+<footer>Copyright © 2023 copyrights, kcg.edu All Rights Reserved.</footer>
+</div>
+</body>
+</html>
